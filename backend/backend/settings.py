@@ -31,8 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "rest_framework",
+    # Followings are added.
+    'menus',
     "restaurants",
+    "rest_framework",
+    # Followings are originally existed.
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
