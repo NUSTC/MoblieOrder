@@ -24,8 +24,92 @@
 - **React** (別途記載)
 
 ## ディレクトリ構造
+想定されるディレクトリ構造です。
+
+(For Admin) If you make a change, REWRITE the file directions.
+
 ```
-ここにディレクトリ構造を表示
+project_root/
+│
+├── backend/               # Djangoプロジェクトのバックエンド部分
+│   ├── backend/           # Djangoの設定・メインアプリケーション
+│   │   ├── settings.py    # プロジェクト設定ファイル
+│   │   ├── urls.py        # ルーティング設定
+│   │   ├── wsgi.py        # WSGI設定
+│   │   └── asgi.py        # ASGI設定
+│   │
+│   ├── restaurants/       # レストラン関連のアプリケーション
+│   │   ├── models.py      # データベースモデル
+│   │   ├── views.py       # APIエンドポイントの実装
+│   │   ├── serializers.py # Django REST Frameworkのシリアライザー
+│   │   ├── urls.py        # レストラン関連のルーティング
+│   │   └── tests.py       # テストコード
+│   │
+│   ├── menus/             # メニュー関連のアプリケーション
+│   │   ├── models.py      # データベースモデル
+│   │   ├── views.py       # APIエンドポイントの実装
+│   │   ├── serializers.py # Django REST Frameworkのシリアライザー
+│   │   ├── urls.py        # メニュー関連のルーティング
+│   │   └── tests.py       # テストコード
+│   │
+│   ├── tickets/           # 食券関連のアプリケーション
+│   │   ├── models.py      # データベースモデル
+│   │   ├── views.py       # APIエンドポイントの実装
+│   │   ├── serializers.py # Django REST Frameworkのシリアライザー
+│   │   ├── urls.py        # 食券関連のルーティング
+│   │   └── tests.py       # テストコード
+│   │
+│   ├── db.sqlite3         # SQLiteデータベースファイル（本番環境ではPostgreSQL推奨）
+│   └── manage.py          # Djangoプロジェクト管理コマンド
+│
+├── frontend/              # Reactのフロントエンド部分
+│   ├── public/            # 静的ファイル（HTMLテンプレートなど）
+│   │   └── index.html     # メインHTMLファイル
+│   │
+│   ├── src/               # Reactのソースコード
+│   │   ├── components/    # Reactの再利用可能なコンポーネント
+│   │   │   ├── LoginForm.jsx
+│   │   │   ├── RestaurantList.jsx
+│   │   │   ├── MenuList.jsx
+│   │   │   ├── Cart.jsx
+│   │   │   ├── DigitalTicket.jsx
+│   │   │   └── OrderHistory.jsx
+│   │   │
+│   │   ├── pages/         # 各画面を構成するページ
+│   │   │   ├── LoginPage.jsx
+│   │   │   ├── RestaurantPage.jsx
+│   │   │   ├── MenuPage.jsx
+│   │   │   ├── CartPage.jsx
+│   │   │   ├── TicketPage.jsx
+│   │   │   └── HistoryPage.jsx
+│   │   │
+│   │   ├── services/      # API通信関連（Axiosなど）
+│   │   │   ├── api.js     # Djangoバックエンドとの通信ロジック
+│   │   │   └── auth.js    # 認証関連のAPI通信ロジック
+│   │   │
+│   │   ├── App.jsx        # Reactアプリのエントリーポイント
+│   │   ├── index.js       # Reactのレンダリングエントリーポイント
+│   │   └── styles/        # スタイリング関連
+│   │       ├── globals.css
+│   │       └── Ticket.css # チケットの切り取りアニメーション用
+│   │
+│   ├── package.json       # Reactプロジェクトの依存関係とスクリプト
+│   └── webpack.config.js  # Webpack設定（必要なら）
+│
+├── static/                # 静的ファイル（Djangoが収集するReactビルドファイル）
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── templates/             # Djangoで使用するHTMLテンプレート
+│   └── index.html         # Reactのエントリーポイントとして使うテンプレート
+│
+├── env/                   # 仮想環境（Pythonの依存関係管理用）
+│   └── bin/activate       # 仮想環境のアクティベーションスクリプト
+│
+├── .env                   # 環境変数ファイル（APIキーやデータベース設定）
+├── requirements.txt       # Pythonパッケージの依存関係
+└── README.md              # このファイル
 ```
 
 ## インストールとセットアップ
@@ -40,7 +124,7 @@
    git clone https://github.com/MobileOrder.git
    cd <your-repository>
 
-2. **仮想環境のセットアップ**
+2. **仮想環境のセットアップ (任意)**
    ```bash
    python -m venv env
    source env\Scripts\activate
@@ -53,7 +137,7 @@
     ```bash
     python manage.py makemigrations
     python manage.py migrate
-    
+
 5. **管理ユーザーの作成**
 
     ```bash
