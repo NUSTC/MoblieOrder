@@ -6,3 +6,9 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+# SQLiteデータベースファイルを無視
+backend/db.sqlite3
+
+# Pythonのキャッシュファイルを無視
+__pycache__/
+*.pyc
