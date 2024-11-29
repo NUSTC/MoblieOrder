@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Followings are added.
+    "orders",
     "accounts",
     "tickets",
     'menus',
