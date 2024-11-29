@@ -32,10 +32,12 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Followings are added.
+    "accounts",
     "tickets",
     'menus',
     "restaurants",
     "rest_framework",
+    'rest_framework.authtoken',
     # Followings are originally existed.
     "django.contrib.admin",
     "django.contrib.auth",
