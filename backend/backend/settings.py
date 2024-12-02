@@ -31,16 +31,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # Followings are added.
+    # Custom Apps
     "corsheaders",
     "orders",
     "accounts",
     "tickets",
     'menus',
     "restaurants",
+
+    # Third Party Apps
     "rest_framework",
     'rest_framework.authtoken',
-    # Followings are originally existed.
+
+    # Django's Default Apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -50,7 +53,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # Must put "corsheaders" on the top
     "corsheaders.middleware.CorsMiddleware",
+
+    # Django's Default Middlewares
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -70,6 +76,10 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_CREDENTIALS = True
 
+# 開発中はすべてのオリジンを許可 (開発後はFalseにする)
+CORS_ALLOW_ALL_ORIGINS = True
+
+# TEMPLATES SETTINGS
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
