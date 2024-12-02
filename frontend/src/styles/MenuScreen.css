@@ -1,0 +1,58 @@
+.menu-screen {
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .menu-item {
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .menu-item-info {
+    margin-bottom: 12px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .cart {
+    margin-top: 20px;
+  }
+  
+  .cart ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cart button {
+    background-color: #f44336;
+  }
+  
+  .cart button:hover {
+    background-color: #d32f2f;
+  }
+  
