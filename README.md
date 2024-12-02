@@ -125,13 +125,14 @@ project_root/
    git clone https://github.com/MobileOrder.git
    cd <your-repository>
 
-2. **仮想環境のセットアップ (任意)**
+2. **仮想環境のセットアップ**
    ```bash
    python -m venv env
    source env\Scripts\activate
 
 3. **依存関係のインストール**
     ```bash
+   # MobileOrder/backend/requirements.txt
     pip install -r requirements.txt
    
 4. **データベースのマイグレーション** 
