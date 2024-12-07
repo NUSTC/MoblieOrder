@@ -1,0 +1,44 @@
+.purchase-history {
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .ticket-list {
+    margin-top: 10px;
+  }
+  
+  .ticket-item {
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .ticket-info {
+    flex: 1;
+  }
+  
+  .status {
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  
+  .used {
+    background-color: #f1f1f1;
+    border-color: #bbb;
+  }
+  
+  .unused {
+    background-color: #f9f9f9;
+    border-color: #4CAF50;
+    color: #4CAF50;
+  }
+  

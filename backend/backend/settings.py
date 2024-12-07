@@ -32,9 +32,14 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Followings are added.
+    "corsheaders",
+    "orders",
+    "accounts",
+    "tickets",
     'menus',
     "restaurants",
     "rest_framework",
+    'rest_framework.authtoken',
     # Followings are originally existed.
     "django.contrib.admin",
     "django.contrib.auth",
@@ -45,6 +50,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -55,6 +61,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "backend.urls"
+
+# CORS SETTINGS
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:3000",
+    "http://localhost:3000",
+]
+
+CORS_ALLOW_CREDENTIALS = True
 
 TEMPLATES = [
     {
@@ -108,9 +122,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ja"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Tokyo"
 
 USE_I18N = True
 
@@ -126,3 +140,9 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+import os
+
+# MEDIA設定
+MEDIA_URL = '/media/'  # URLプレフィックス（例: http://127.0.0.1:8000/media/）
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 実際のファイル保存先ディレクトリ

@@ -18,6 +18,7 @@
 - **Python** (バージョン3.8以上)
 - **Django** (バージョン4.x)
 - **Django REST Framework**
+- **Pillow** (ImageField)
 - **SQLite** (開発環境で使用)
 
 ### フロントエンド

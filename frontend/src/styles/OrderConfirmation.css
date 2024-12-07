@@ -1,0 +1,49 @@
+.order-confirmation {
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .cart-items {
+    margin-bottom: 20px;
+  }
+  
+  .cart-item {
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+  }
+  
+  .item-info h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .item-info p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .total {
+    margin-top: 20px;
+  }
+  
+  .order-button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .order-button:hover {
+    background-color: #45a049;
+  }
+  
