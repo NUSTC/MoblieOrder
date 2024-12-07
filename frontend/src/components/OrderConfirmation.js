@@ -1,35 +1,40 @@
-import React from 'react';
-import './../styles/OrderConfirmation.css';
+import React from "react";
+import "./../styles/OrderConfirmation.css";
 
 const OrderConfirmation = ({ cart, onOrder }) => {
   // 合計金額を計算
-  const calculateTotal = () => {
-    return cart.reduce((total, menu) => total + menu.price, 0);
-  };
+  const totalAmount = cart.reduce((total, menu) => total + parseFloat(menu.price), 0);
 
+  // 注文確定の処理
   const handleOrder = () => {
-    // 注文を確定し、処理を進める
     onOrder();
   };
 
   return (
     <div className="order-confirmation">
-      <h2>注文確認</h2>
-      <div className="cart-items">
-        {cart.map((item, index) => (
-          <div key={index} className="cart-item">
-            <div className="item-info">
-              <h3>{item.name}</h3>
-              <p>数量: 1</p>
-              <p>¥{item.price}</p>
+      {/* ヘッダー */}
+      <h2 className="order-confirmation-title">注文確認</h2>
+
+      {/* カートアイテム一覧 */}
+      <div className="order-confirmation-items">
+        {cart.map((item) => (
+          <div key={item.id} className="order-item">
+            <div className="order-item-info">
+              <h3 className="order-item-name">{item.name}</h3>
+              <p className="order-item-quantity">数量: 1</p>
+              <p className="order-item-price">¥{item.price}</p>
             </div>
           </div>
         ))}
       </div>
-      <div className="total">
-        <h3>合計金額: ¥{calculateTotal()}</h3>
+
+      {/* 合計金額 */}
+      <div className="order-confirmation-total">
+        <h3>合計金額: ¥{totalAmount}</h3>
       </div>
-      <button onClick={handleOrder} className="order-button">
+
+      {/* 注文ボタン */}
+      <button onClick={handleOrder} className="order-confirmation-button">
         注文する
       </button>
     </div>
