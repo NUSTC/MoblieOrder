@@ -21,7 +21,7 @@ const MenuScreen= ({munes, onAddToCart}) => {
             <h1>食堂メニュー</h1>
             <ul>
                 {menus
-                .filter(menu => menu.restaurant === 1) // restaurant が 1 のものだけを選択
+                .filter(menu => menu.restaurant === 3) // restaurant が 1 のものだけを選択
                 .map(menu => (
                     
                     <li key={menu.id}>
