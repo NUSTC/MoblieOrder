@@ -141,8 +141,3 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-import os
-
-# MEDIA設定
-MEDIA_URL = '/media/'  # URLプレフィックス（例: http://127.0.0.1:8000/media/）
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 実際のファイル保存先ディレクトリ
