@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import RestaurantCard from './RestaurantCard';
 import './../styles/RestaurantList.css';
 
 const RestaurantList = ({ onSelect }) => {
   const [restaurants, setRestaurants] = useState([]);
-  
+
   useEffect(() => {
     // 仮のデータをロードする
     setRestaurants([
@@ -13,15 +12,21 @@ const RestaurantList = ({ onSelect }) => {
       // 他のレストランデータを追加
     ]);
   }, []);
-  
+
+  const RestaurantCard = ({ restaurant }) => (
+    <div className="restaurant-card" onClick={() => onSelect(restaurant.id)}>
+      <img src={restaurant.imageUrl} alt={restaurant.name} className="restaurant-image" />
+      <div className="restaurant-details">
+        <h3>{restaurant.name}</h3>
+        <p>{restaurant.description}</p>
+      </div>
+    </div>
+  );
+
   return (
     <div className="restaurant-list">
       {restaurants.map(restaurant => (
-        <RestaurantCard 
-          key={restaurant.id} 
-          restaurant={restaurant} 
-          onSelect={onSelect} 
-        />
+        <RestaurantCard key={restaurant.id} restaurant={restaurant} />
       ))}
     </div>
   );

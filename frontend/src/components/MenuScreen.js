@@ -26,7 +26,7 @@ const MenuScreen= ({munes, onAddToCart}) => {
                     
                     <li key={menu.id}>
                         <button onClick={() => onAddToCart(menu)}>{menu.name}</button>
-                        <img src={menu.imageUrl} alt={menu.name} className="menu-image" />
+                        <img src={`http://localhost:8000${menu.image}`} alt={menu.name} className="menu-image" />
                         <p>価格: {menu.price}円</p>
                     </li>
                     
