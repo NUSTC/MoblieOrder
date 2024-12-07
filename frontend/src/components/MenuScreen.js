@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './../styles/MenuScreen.css';
 import axios from 'axios';
 
-const MenuScreen= () => {
+const MenuScreen= ({munes, onAddToCart}) => {
     const [menus, setMenus] = useState([]);
 
     useEffect(() => {
@@ -20,12 +20,17 @@ const MenuScreen= () => {
         <div>
             <h1>食堂メニュー</h1>
             <ul>
-                {menus.map(menu => (
+                {menus
+                .filter(menu => menu.restaurant === 1) // restaurant が 1 のものだけを選択
+                .map(menu => (
+                    
                     <li key={menu.id}>
-                        <h2>{menu.name}</h2>
+                        <button onClick={() => onAddToCart(menu)}>{menu.name}</button>
+                        <img src={menu.imageUrl} alt={menu.name} className="menu-image" />
                         <p>価格: {menu.price}円</p>
-                        <p>{menu.description}</p>
                     </li>
+                    
+
                 ))}
             </ul>
         </div>

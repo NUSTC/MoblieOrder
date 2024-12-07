@@ -4,7 +4,7 @@ import './../styles/OrderConfirmation.css';
 const OrderConfirmation = ({ cart, onOrder }) => {
   // 合計金額を計算
   const calculateTotal = () => {
-    return cart.reduce((total, item) => total + item.price, 0);
+    return cart.reduce((total, menu) => total + menu.price, 0);
   };
 
   const handleOrder = () => {
