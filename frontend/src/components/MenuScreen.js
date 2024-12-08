@@ -18,7 +18,7 @@ const MenuScreen= ({munes, onAddToCart}) => {
 
     return (
         <div>
-            <h1>食堂メニュー</h1>
+            <h1>「リアン」のメニュー</h1>
             <ul>
                 {menus
                 .filter(menu => menu.restaurant === 3) // restaurant が 1 のものだけを選択
