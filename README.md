@@ -27,7 +27,7 @@
 ## ディレクトリ構造
 想定されるディレクトリ構造です。
 
-(For Admin) If you make a change, REWRITE the file directions.
+((更新間に合ってません))
 
 ```
 project_root/
