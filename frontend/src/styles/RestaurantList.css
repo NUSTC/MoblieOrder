@@ -1,7 +1,85 @@
+/* 全体の背景と設定 */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #ffecb3, #ffcc80); /* 上部が薄い黄色、下部が明るいオレンジ */
+  color: #333;
+}
+
+/* レストランリストのスタイル */
 .restaurant-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8); /* 背景に白の透明レイヤー */
+  border-radius: 15px;
+  margin: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* カードのスタイル */
+.restaurant-card {
+  width: 220px;
+  background-color: #ffcc80; /* 明るいオレンジ */
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* レストラン画像のスタイル */
+.restaurant-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* レストラン詳細のスタイル */
+.restaurant-details {
+  padding: 15px;
+  background-color: #ffe0b2; /* 薄い黄色 */
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.restaurant-details h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #bf360c; /* 濃いオレンジ */
+  margin: 10px 0 5px;
+}
+
+.restaurant-details p {
+  font-size: 16px;
+  color: #e65100; /* オレンジ */
+  margin: 0;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .restaurant-card {
+    width: 90%;
   }
-  
+
+  .restaurant-list {
+    padding: 10px;
+  }
+
+  .restaurant-details h3 {
+    font-size: 18px;
+  }
+
+  .restaurant-details p {
+    font-size: 14px;
+  }
+}
