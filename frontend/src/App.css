@@ -1,10 +1,68 @@
-.app {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+/* 全体のフォントと文字色を設定 */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #D35400; /* 濃いオレンジ */
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* 背景色を淡いグレーに設定 */
 }
 
-h1 {
-  font-size: 24px;
+/* 見出しのデザイン */
+h1, h2 {
+  color: #D35400; /* 濃いオレンジ */
+  font-weight: 600;
+}
+
+/* ボタンのスタイル */
+button {
+  font-family: 'Poppins', sans-serif;
+  color: #D35400; /* 濃いオレンジ */
+  background-color: #fff; /* 背景は白 */
+  border: 2px solid #D35400; /* 濃いオレンジのボーダー */
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #D35400; /* 背景を濃いオレンジに */
+  color: #fff; /* 文字色を白に */
+  transform: scale(1.05); /* 少し拡大してポップな効果 */
+}
+
+/* 購入履歴ボタン専用のデザイン */
+.view-history-button {
+  font-size: 16px;
+  margin-top: 20px;
+  display: block;
+}
+
+/* チケットリストのスタイル */
+.ticket-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* コンテナのデザイン */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
   text-align: center;
-  margin-bottom: 20px;
+}
+
+/* レスポンシブデザインのための調整 */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  button {
+    font-size: 14px;
+  }
 }
