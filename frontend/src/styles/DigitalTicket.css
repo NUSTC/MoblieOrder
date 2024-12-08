@@ -1,4 +1,3 @@
-/* デフォルトチケットスタイル */
 .digital-ticket {
   position: relative;
   width: 300px;
@@ -12,55 +11,15 @@
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.digital-ticket .ticket-left,
-.digital-ticket .ticket-right {
+.ticket-left,
+.ticket-right {
   flex: 1;
   padding: 20px;
   text-align: center;
-  transition: transform 0.5s ease-in-out;
-}
-
-.ticket-left {
-  border-right: 1px dashed #ccc;
-}
-
-.ticket-right {
   border-left: 1px dashed #ccc;
-}
-
-/* 使用済み時のスライドアニメーション */
-.digital-ticket.used .ticket-left {
-  transform: translateX(-150%);
-}
-
-.digital-ticket.used .ticket-right {
-  transform: translateX(150%);
-}
-
-/* 光るエフェクト */
-.digital-ticket.used::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(to bottom, #fff, #ff0, #fff);
-  box-shadow: 0 0 10px 2px #ff0;
-  transform: translateX(-50%);
-  animation: glow 1s infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    opacity: 0.8;
-  }
-  to {
-    opacity: 0.2;
-  }
+  border-right: 1px dashed #ccc;
 }
 
 /* 使用済みラベル */
@@ -74,6 +33,19 @@
   font-size: 16px;
   border-radius: 5px;
   z-index: 10;
+}
+
+/* 光るエフェクト */
+.glow-effect {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #fff, #ff0, #fff);
+  box-shadow: 0 0 10px 2px #ff0;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 /* スワイプ指示 */
